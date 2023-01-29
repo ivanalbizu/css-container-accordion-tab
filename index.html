@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS container accordion / tab</title>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+  <div class="container-accordion-tab">
+    <div class="accordion">
+      <input type="radio" name="tab1" class="tab-input" id="tab1-1" checked>
+      <label class="accordion__label" for="tab1-1">Tab + Acc 1</label>
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, deserunt!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, deserunt!</p>
+      </div>
+
+      <input type="radio" name="tab1" class="tab-input" id="tab1-2">
+      <label class="accordion__label" for="tab1-2">Tab + Acc 1</label>
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet consectetur, Possimus, deserunt!</p>
+      </div>
+
+      <input type="radio" name="tab1" class="tab-input" id="tab1-3">
+      <label class="accordion__label" for="tab1-3">Tab + Acc 1</label>
+      <div class="accordion__content">
+        <p>Lorem ipsum, adipisicing elit. Possimus, deserunt!</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container-accordion-tab" style="--type: only-tab;">
+    <div class="accordion" style="--primary: 60;">
+      <input type="radio" name="tab2" class="tab-input" id="tab2-1" checked>
+      <label class="accordion__label" for="tab2-1">Tab + Acc 1</label>
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, deserunt!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, deserunt!</p>
+      </div>
+
+      <input type="radio" name="tab2" class="tab-input" id="tab2-2">
+      <label class="accordion__label" for="tab2-2">Tab + Acc 1</label>
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet consectetur, Possimus, deserunt!</p>
+      </div>
+
+      <input type="radio" name="tab2" class="tab-input" id="tab2-3">
+      <label class="accordion__label" for="tab2-3">Tab + Acc 1</label>
+      <div class="accordion__content">
+        <p>Lorem ipsum, adipisicing elit. Possimus, deserunt!</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container-accordion-tab" style="--type: only-accordion;">
+    <div class="accordion" style="--primary: 30;">
+      <input type="radio" name="tab3" class="tab-input" id="tab3-1" checked>
+      <label class="accordion__label" for="tab3-1">Tab + Acc 1</label>
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, deserunt!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, deserunt!</p>
+      </div>
+
+      <input type="radio" name="tab3" class="tab-input" id="tab3-2">
+      <label class="accordion__label" for="tab3-2">Tab + Acc 1</label>
+      <div class="accordion__content">
+        <p>Lorem ipsum dolor sit amet consectetur, Possimus, deserunt!</p>
+      </div>
+
+      <input type="radio" name="tab3" class="tab-input" id="tab3-3">
+      <label class="accordion__label" for="tab3-3">Tab + Acc 1</label>
+      <div class="accordion__content">
+        <p>Lorem ipsum, adipisicing elit. Possimus, deserunt!</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

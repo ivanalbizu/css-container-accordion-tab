@@ -1,0 +1,142 @@
+@charset "UTF-8";
+@layer reset, theme, accordion;
+@layer reset {
+  *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+@layer theme {
+  :root {
+    --space-s: 8px;
+    --space-m: 16px;
+    --transition-time-duration: 0.3s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --transition-time-duration: 1ms;
+    }
+  }
+  body {
+    background-color: #e9e9e9;
+    padding: var(--space-s);
+    margin: 0;
+    font-family: sans-serif;
+  }
+}
+@layer accordion {
+  .tab-input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  .accordion {
+    --primary: 150;
+    --brand-primary: hsl(var(--primary), 50%, 41%);
+    --brand-primary-dark: hsl(var(--primary), 50%, 36%);
+    --brand-primary-darker: hsl(var(--primary), 50%, 30%);
+    --accordion-flex-direction: column;
+    --accordion-label-justify-content: space-between;
+    --accordion-label-full-spacing: 0;
+    --accordion-label-max-width: initial;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: var(--accordion-flex-direction);
+    overflow: hidden;
+    width: min(600px, 98%);
+    margin: 0 auto;
+  }
+  .accordion__label {
+    display: flex;
+    flex-grow: var(--accordion-label-full-spacing);
+    justify-content: var(--accordion-label-justify-content);
+    max-width: var(--accordion-label-max-width);
+    padding: var(--space-m);
+    color: #fff;
+    background-color: var(--brand-primary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color var(--transition-time-duration);
+    box-sizing: content-box;
+  }
+  .accordion__label:hover {
+    background-color: var(--brand-primary-dark);
+  }
+  .accordion__label::after {
+    content: "▼";
+    font-size: 14px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    transition: transform var(--transition-time-duration);
+  }
+  .accordion__content {
+    max-height: 0;
+    padding: 0 var(--space-m);
+    background-color: #fff;
+    color: #141414;
+    overflow: hidden;
+    transition: all var(--transition-time-duration);
+    width: 100%;
+  }
+  .accordion__content p {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 0.1px;
+  }
+  .accordion__content p:not(:last-of-type) {
+    padding-bottom: var(--space-s);
+  }
+  .tab-input:checked + .accordion__label {
+    background-color: var(--brand-primary-darker);
+    cursor: default;
+  }
+  .tab-input:checked + .accordion__label::after {
+    transform: scaleY(-1);
+  }
+  .tab-input:checked + .accordion__label + .accordion__content {
+    max-height: max-content;
+    padding: var(--space-m);
+    overflow: auto;
+  }
+  .container-accordion-tab {
+    container-name: accordion;
+    container-type: inline-size;
+    --type: accordion-and-tab;
+  }
+  @container accordion (width > 600px) and style(--type: accordion-and-tab) {
+    .accordion {
+      --accordion-flex-direction: row;
+      --accordion-label-justify-content: center;
+      --accordion-label-full-spacing: 1;
+      --accordion-label-max-width: calc(33.3333333333% - var(--space-m) * 2);
+    }
+    .accordion__label::after {
+      content: none;
+    }
+    .accordion__content {
+      order: 1;
+    }
+  }
+  @container style(--type: only-tab) {
+    .accordion {
+      --accordion-flex-direction: row;
+      --accordion-label-justify-content: center;
+      --accordion-label-full-spacing: 1;
+      --accordion-label-max-width: calc(33.3333333333% - var(--space-m) * 2);
+    }
+    .accordion__label::after {
+      content: none;
+    }
+    .accordion__content {
+      order: 1;
+    }
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
